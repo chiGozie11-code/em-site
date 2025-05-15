@@ -1,0 +1,413 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.tagesschrift-regular {
+  font-family: "Tagesschrift", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+header {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #3498db;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav-menu {
+      position: fixed;
+      left: -100%;
+      top: 70px;
+      flex-direction: column;
+      background-color: #2c3e50;
+      /* background-color: red; */
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      gap: 2rem;
+  }
+
+  .nav-menu.active {
+      left: 0;
+  }
+
+  .hamburger {
+      display: block;
+  }
+}
+
+/* Animation for the mobile menu */
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+
+.nav-menu.active {
+  animation: slideIn 0.3s forwards;
+}
+
+/* Added content for demo purposes */
+.content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content h1 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.content p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* footer */
+footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 3rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: #3498db;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #3498db;
+}
+
+/* About Section */
+.about-company p {
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #34495e;
+  color: #ecf0f1;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #3498db;
+  transform: translateY(-3px);
+}
+
+/* Links Section */
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #3498db;
+  transform: translateX(5px);
+}
+
+/* Contact Section */
+.contact-info p {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.contact-info i {
+  min-width: 20px;
+}
+
+/* Newsletter Section */
+.newsletter form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.newsletter button {
+  padding: 0 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #2980b9;
+}
+
+.newsletter .form-message {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.newsletter .form-message.success {
+  color: #2ecc71;
+}
+
+.newsletter .form-message.error {
+  color: #e74c3c;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #34495e;
+  color: #bdc3c7;
+  font-size: 0.8rem;
+}
+
+.footer-bottom p {
+  margin-bottom: 0.5rem;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+  }
+  
+  .footer-section {
+      min-width: 100%;
+  }
+}
+
+
+/* whatsapp icon */
+
+/* Sample content styles */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366; /* WhatsApp green color */
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E; /* Darker WhatsApp green on hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+/* Optional Tooltip */
+.whatsapp-button::before {
+  content: "Chat with us on WhatsApp";
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.whatsapp-button:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sample footer for demonstration */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
